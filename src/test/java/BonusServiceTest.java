@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 public class BonusServiceTest {
 
     @Test
-    void shouldCalculateForRegisteredAndUnderLimit() {
+    public void shouldCalculateForRegisteredAndUnderLimit() {
         BonusService service = new BonusService();
 
         // подготавливаем данные:
@@ -20,7 +20,7 @@ public class BonusServiceTest {
     }
 
     @Test
-    void shouldCalculateForRegisteredAndOverLimit() {
+   public void shouldCalculateForRegisteredAndOverLimit() {
         BonusService service = new BonusService();
 
         // подготавливаем данные:
@@ -35,8 +35,8 @@ public class BonusServiceTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test // проверяем значения для незарегестрированных пользователей
-    void shouldCalculateForNotRegisteredAndUnderLimit() {
+    @Test // проверяем значения для незарегистрированных пользователей
+   public void shouldCalculateForNotRegisteredAndUnderLimit() {
         BonusService service = new BonusService();
 
         // подготавливаем данные:
@@ -51,8 +51,8 @@ public class BonusServiceTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test // проверяем работает ли лимит на бонусы для не зарегестрированных пользователей
-    void shouldCalculateForNotRegisteredAndOverLimit() {
+    @Test // проверяем работает ли лимит на бонусы для незарегистрированных пользователей
+    public void shouldCalculateForNotRegisteredAndOverLimit() {
         BonusService service = new BonusService();
 
         // подготавливаем данные:
@@ -68,7 +68,7 @@ public class BonusServiceTest {
     }
 
     @Test // Проверка граничных значений (499)
-    void shouldReturnExactlyLimitForRegistered() {
+    public void shouldReturnExactlyLimitForRegistered() {
         BonusService service = new BonusService();
         // 500 / 0.03 = 16_666.66 -> 16_667 * 3% = 501 (превышает лимит)
         long expected = 499;
